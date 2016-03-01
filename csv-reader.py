@@ -3,7 +3,6 @@
 
 import csv #import csv utility
 
-print "Helloww world."
 test1 = open('testdata1.csv', 'r')
 test2 = open('testdata2.csv', 'r')
 counter = 0
@@ -15,21 +14,21 @@ with open('testdata1.csv', 'r') as test1, open('testdata2.csv', 'r') as test2:
     for samerows in reader1:
         for samerowstwo in reader2:
             if samerows == samerowstwo:
-                print samerows, samerowstwo
+
                 counter += 1
-                print counter, " Match!"
-    # print list
-    # #print out csv1
-    # print "Test data 1"
-    # for row in read1:
-    #     print row
-    #
-    # #print out csv2
-    # print "\nTest data 2"
-    # for row in read2:
-    #     print row
+
+                if counter == 1:
+                    print counter, " row match!"
+                    print samerows, samerowstwo
+
+                elif counter == 0:
+                    print "No matching rows :("
+
+                else:
+                    print counter, " rows match!"
+                    print samerows, samerowstwo
 
 
-#Close these effing files, yo
+#Close files
 test1.close()
 test2.close()
