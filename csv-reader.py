@@ -6,7 +6,7 @@ import csv #import csv utility
 print "Helloww world."
 test1 = open('testdata1.csv', 'r')
 test2 = open('testdata2.csv', 'r')
-counter
+counter = 0
 
 with open('testdata1.csv', 'r') as test1, open('testdata2.csv', 'r') as test2:
     reader1 = csv.reader(test1)
@@ -16,7 +16,8 @@ with open('testdata1.csv', 'r') as test1, open('testdata2.csv', 'r') as test2:
         for samerowstwo in reader2:
             if samerows == samerowstwo:
                 print samerows, samerowstwo
-                print "Match!"
+                counter += 1
+                print counter, " Match!"
     # print list
     # #print out csv1
     # print "Test data 1"
