@@ -1,32 +1,26 @@
-#Objective: Compare 2 CSV files and output number of ROWS
+#Objective: Compare 2 CSV files and output number of COLUMNS
 #           that are a match
 
 import csv #import csv utility
 
 test1 = open('testdata1.csv', 'r')
 test2 = open('testdata2.csv', 'r')
-counter = 0
 
 with open('testdata1.csv', 'r') as test1, open('testdata2.csv', 'r') as test2:
     reader1 = csv.reader(test1)
     reader2 = csv.reader(test2)
 
-    for samerows in reader1:
-        for samerowstwo in reader2:
-            if samerows == samerowstwo:
+    for x in reader1:
+        #print rows[0], rows[1] #column1, column2
+        for y in reader2:
+            if x[0] == y[0]:
+                print "MATCH MATCH"
+                print x[0], y[0]
 
-                counter += 1
 
-                if counter == 1:
-                    print counter, " row match!"
-                    print samerows, samerowstwo
-
-                elif counter == 0:
-                    print "No matching rows :("
-
-                else:
-                    print counter, " rows match!"
-                    print samerows, samerowstwo
+            if x[1] == y[1]:
+                print "MATCH MATCH 1"
+                print x[1], y[1]
 
 
 #Close files
