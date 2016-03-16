@@ -13,7 +13,7 @@ with open('testdata1.csv', 'r') as test1, open('testdata2.csv', 'r') as test2:
 
     for samerows in reader1:
         for samerowstwo in reader2:
-            while (samerows == samerowstwo):
+            if samerows == samerowstwo:
                 counter += 1
                 if counter == 1:
                     print counter, " row match!"
