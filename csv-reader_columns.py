@@ -8,14 +8,15 @@ test2 = csv.reader(open('testdata2.csv'), delimiter=",")
 
 ncolsTest1 = len(next(test1))
 ncolsTest2 = len(next(test2))
-maxColumns = ncolsTest2
 counter = 0
 
 for n,o in zip(test1, test2):
     if n[0] == o[0]:
         print n, o , "MATCH ELEMENT 0"
+        counter += 1
     if n[1] == o[1]:
         print n, o , "MATCH ELEMENT 1"
+        counter += 1
 
-
+print "Number of matches", counter
 #file end line
